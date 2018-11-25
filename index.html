@@ -258,7 +258,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-light">
-					<h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-tasks" aria-hidden="true"></i>View repair case</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-tasks" aria-hidden="true"></i> View repair case</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -286,7 +286,7 @@
 					</div>
 				</div>
 				<div class="modal-footer bg-light">
-					<button type="button" onclick="setTimeout(function() {doType();}, 6000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Close case</button>
+					<button type="button" onclick="doType().delay(10000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Close case</button>
 				</div>
 			</div>
 		</div>
@@ -314,7 +314,7 @@
 				});
 			}, 4000);
 			
-			$("div.sent_msg > p").show().delay(2000);
+			$("div.sent_msg > p").show().delay(4000);
 
 			var typing=Typing("Hi, ~2000~ I can’t pick it up today, I’m on vacation. ~2000~ Could you hold it for some time?");
 			typing();

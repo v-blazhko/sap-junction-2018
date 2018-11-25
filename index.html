@@ -66,41 +66,30 @@
 								</div>
 
 							</div>
-							<div class="inbox_chat ">
+							<div class="inbox_chat">
 								<div class="chat_list active_chat">
-									<a data-toggle="modal" data-target="#hint"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>Best hint to follow </p><p class="font-weight-light">Light weight text.</p></div></div></a>
+									<a onclick="changeCards();"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>Car handling terms<br>and conditions</p><p class="font-weight-light">Best hint to follow</p></div></div></a>
 								</div>
 								<div class="chat_list slideUp" id="an">
-									<a data-toggle="modal" data-target="#hint"><div class="badge badge-pill green""><p>One more hint to follow</p><p class="font-weight-light">Light weight text.</p></div></a>
+									<a onclick="changeCards();" data-toggle="modal" data-target="#hint"><div class="badge badge-pill green""><p>Car transfer cost calculation</p><p class="font-weight-light">Probability 31%</p></div></a>
 								</div>
 								<div class="chat_list slideUp" id="an">
-									<a data-toggle="modal" data-target="#hint"><div class="badge badge-pill"><p>One more hint to follow</p><p class="font-weight-light">Light weight text.</p></div></a>
+									<a  onclick="changeCards();" data-toggle="modal" data-target="#hint"><div class="badge badge-pill"><p>Car transfer - driver<br>availability</p><p class="font-weight-light">Probability 24%</p></div></a>
 								</div>
 								<div class="chat_list slideUp" id="an">
-									<a data-toggle="modal" data-target="#hint"><div class="badge badge-pill green"><p>One more hint to follow</p><p class="font-weight-light">Light weight text.</p></div></a>
+									<a  onclick="changeCards();" data-toggle="modal" data-target="#hint"><div class="badge badge-pill green"><p>Money refund</p><p class="font-weight-light">Probability 11%</p></div></a>
 								</div>
 								<div class="chat_list slideUp" id="an">
-									<a data-toggle="modal" data-target="#hint"><div class="badge badge-pill" ><p>One more hint to follow</p></div></a>
+									<a  onclick="changeCards();" data-toggle="modal" data-target="#hint"><div class="badge badge-pill green"><p>Consultation</p><p class="font-weight-light">Probability 1%</p></div></a>
 								</div>
 							</div>
 						</div>
 						<div class="mesgs">
 							<div class="msg_history">
-								<div class="incoming_msg">
-									<div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="johny">
-									</div>
-									<div class="received_msg">
-										<div class="received_withd_msg">
-											<p>Test which is a new approach to have all
-											solutions</p>
-											<span class="time_date"> 11:01 AM</span>
-										</div>
-									</div>
-								</div>
+								
 								<div class="outgoing_msg">
 									<div class="sent_msg">
-										<p>Test which is a new approach to have all
-										solutions</p>
+										<p>Hello, I’m from CarService, Mr Richard. Your car is ready, you can pick it up today.</p>
 										<span class="time_date"> 11:01 AM</span>
 									</div>
 								</div>
@@ -114,7 +103,6 @@
 										</div>
 									</div>
 								</div>
-								
 							</div>
 							<div class="type_msg" style="min-height: 30px; border-top: none;">
 								<div class="wavy">
@@ -183,7 +171,33 @@
 			</div>
 		</div>
 	</div>
+	<!-- Modal -->
+	<div class="modal fade" id="firstTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Task for agent #67</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p>Customer Name: Nikita Tafintsev</p>
+					<p>Car: Mercedes-Benz S600 W222</p>
+					<p>Service Status: Available for pick up</p>
+					<ol>
+						<li>Call the customer</li>
+						<li>Inform the customer that the car is available for pick up</li>
+					</ol>
 
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" onclick="setTimeout(function() {doType();}, 6000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-phone" aria-hidden="true"></i> Call this customer</button>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- Task -->
 	<div class="modal fade" id="task" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
@@ -229,24 +243,46 @@
 	<script src="src/typing/typing.js"></script>
 	<script>
 		$(window).on('load',function(){
-			$('#task').modal('show');
+			$('#firstTask').modal('show');
 			$('.chat_list').each(function(){$(this).hide();});
 			$('.wavy').hide();
+
+			$("div.sent_msg > p").hide();
 		});
-		var repeater;
 
 		function doType() {
-
 			$('.wavy').show();
-			setTimeout(function() {$('.chat_list').each(function(){$(this).show();});}, 4000);
+
+			setTimeout(function() {
+				$('.chat_list').each(function(){
+					$(this).show();
+				});
+			}, 4000);
 			
-			document.getElementById("text").innerHTML = "";
-			var typing=Typing("Yet another pure JS library that emulates a user typing/deleting some some*some*  text with (or without)  some some*some*  custom~3000~blinking cursor. Yet another  some some*some*  JS~2000~ library library*library* that emulates a user typing/deleting some some*some* text with (or without) a custom blinking cursor.Yet another pure JS~2000~ library that emulates a user typing/deleting some some*some* text with (or without) a custom blinking cursor.");
+			$("div.sent_msg > p").show().delay(2000);
+
+			var typing=Typing("Hi, ~2000~ I can’t pick it up today, I’m on vacation. ~2000~ Could you hold it for some time?");
 			typing();
-			repeater = setTimeout(doWork, 1000);
 		}
 
-		
+		function changeCards() {
+			cardsSecond = '<div class="chat_list active_chat"><a onclick="changeforthfckinglasttime()"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>Picking up the car - <br>other person</p><p class="font-weight-light">Best hint to follow</p></div></div></a></div><div class="chat_list slideUp" id="an"><a  onclick="changeforthfckinglasttime()"><div class="badge badge-pill green""><p>Car transfer service request</p><p class="font-weight-light">Probability 31%</p></div></a></div><div class="chat_list slideUp" id="an"><a d onclick="changeforthfckinglasttime()"><div class="badge badge-pill"><p>Car handling fees<br>availability</p><p class="font-weight-light">Probability 24%</p></div></a></div><div class="chat_list slideUp" id="an"><a d onclick="changeforthfckinglasttime()"><div class="badge badge-pill green"><p>Car transfer - driver<br>availability</p><p class="font-weight-light">Probability 11%</p></div></a></div><div class="chat_list slideUp" id="an"><a onclick="changeforthfckinglasttime()"><div class="badge badge-pill green"><p>Consultation</p><p class="font-weight-light">Probability 1%</p></div></a></div>';
+			$('.inbox_chat').html(cardsSecond).delay(1000);
+			agentMsg = '<div class="outgoing_msg"><div class="sent_msg"><p>We will hold it for free for a week and then it costs $100 per day.</p><span class="time_date"> 11:02 AM</span></div></div>';
+			$('.msg_history').append(agentMsg).delay(2000);
+
+
+			userMsg = '<div class="incoming_msg"><div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="johny"></div><div class="received_msg"><div class="received_withd_msg"><p>Can my friend pick it up?</p><span class="time_date"> 11:03 AM</span></div></div></div>';
+			$('.msg_history').append(userMsg);
+
+		}
+
+		function changeforthfckinglasttime() {
+			cardsThird = '<div class="chat_list active_chat"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>View repair case</p><p class="font-weight-light">Best hint to follow</p></div></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green""><p>S600 W222 repair manual</p><p class="font-weight-light">Probability 47%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill"><p>International Warranty</p><p class="font-weight-light">Probability 34%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green"><p>Local Warranty</p><p class="font-weight-light">Probability 11%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green"><p>Consultation</p><p class="font-weight-light">Probability 1%</p></div></a></div>';
+			$('.inbox_chat').html(cardsThird).delay(1000);
+		}
+
+
 	</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

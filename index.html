@@ -89,7 +89,7 @@
 								
 								<div class="outgoing_msg">
 									<div class="sent_msg">
-										<p>Hello, I’m from CarService, Mr Richard. Your car is ready, you can pick it up today.</p>
+										<p>Hello, I’m from CarService, Mr. Tafintsev. Your car is ready, you can pick it up today.</p>
 										<span class="time_date"> 11:01 AM</span>
 									</div>
 								</div>
@@ -131,13 +131,13 @@
 				<div class="card mx-auto bg-light" style="width: 18rem;">
 					<img class="card-img-top img-fluid mx-auto" src="img/user.png" style="max-width: 120px; margin-top: 5px;" alt="Card image cap">
 					<div class="card-body">
-						<h5 class="card-title">User #451</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<h5 class="card-title">Nikita Tafintsev</h5>
+						<p class="card-text">User #567</p>
 					</div>
 					<ul class="list-group list-group-flush">
-						<li class="list-group-item">Status: VIP</li>
-						<li class="list-group-item">Current: normal</li>
-						<li class="list-group-item">Additional info</li>
+						<li class="list-group-item">Membership started: 2013</li>
+						<li class="list-group-item">Car: S600 W222</li>
+						<li class="list-group-item">Extended warranty</li>
 					</ul>
 					<div class="card-body">
 						<a href="#" class="card-link">Last case</a>
@@ -167,6 +167,61 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary" data-dismiss="modal">Send to customer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="secondTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Picking up the car - other person</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Name of the customer</label>
+							<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+							<small id="emailHelp" class="form-text text-muted">Name of the client</small>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputPassword1">Telephone number</label>
+							<input type="text" class="form-control" id="exampleInputPassword1" placeholder="+7 911830 5261">
+
+							<small id="emailHelp" class="form-text text-muted">Please enter valid phone number</small>
+
+						</div>
+					</form>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="thirdTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLongTitle">Car handling - Terms and Conditions</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<ol>
+						<li>Free for a week after service</li>
+						<li>$100 per day</li>
+					</ol>
+
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary mx-auto" data-dismiss="modal">OK</button>
 				</div>
 			</div>
 		</div>
@@ -203,7 +258,7 @@
 		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header bg-light">
-					<h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-tasks" aria-hidden="true"></i> New task for agent</h5>
+					<h5 class="modal-title" id="exampleModalLongTitle"><i class="fa fa-tasks" aria-hidden="true"></i>View repair case</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -212,10 +267,11 @@
 					<div class="container p-5">
 						<div class="row">
 							<div class="col-md-4">
-								<p>1. Do something</p>
-								<p>2. Ask client for something</p>
-								<p>3. Give client something</p>
-								<p><b>Profit!</b></p>
+								<ol>
+									<li>Oil - €80</li>
+									<li>Left Tire - €400</li>
+								</ol>
+
 							</div>
 							<div class="col-md-8">
 								<img class="img-fluid" src="img/car.jpg">
@@ -230,8 +286,7 @@
 					</div>
 				</div>
 				<div class="modal-footer bg-light">
-					<button type="button" onclick="setTimeout(function() {doType();}, 4000);" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" onclick="setTimeout(function() {doType();}, 6000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-phone" aria-hidden="true"></i> Call this customer</button>
+					<button type="button" onclick="setTimeout(function() {doType();}, 6000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-close" aria-hidden="true"></i> Close case</button>
 				</div>
 			</div>
 		</div>
@@ -266,6 +321,8 @@
 		}
 
 		function changeCards() {
+
+			$('#thirdTask').modal('show').delay(3000);
 			cardsSecond = '<div class="chat_list active_chat"><a onclick="changeforthfckinglasttime()"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>Picking up the car - <br>other person</p><p class="font-weight-light">Best hint to follow</p></div></div></a></div><div class="chat_list slideUp" id="an"><a  onclick="changeforthfckinglasttime()"><div class="badge badge-pill green""><p>Car transfer service request</p><p class="font-weight-light">Probability 31%</p></div></a></div><div class="chat_list slideUp" id="an"><a d onclick="changeforthfckinglasttime()"><div class="badge badge-pill"><p>Car handling fees<br>availability</p><p class="font-weight-light">Probability 24%</p></div></a></div><div class="chat_list slideUp" id="an"><a d onclick="changeforthfckinglasttime()"><div class="badge badge-pill green"><p>Car transfer - driver<br>availability</p><p class="font-weight-light">Probability 11%</p></div></a></div><div class="chat_list slideUp" id="an"><a onclick="changeforthfckinglasttime()"><div class="badge badge-pill green"><p>Consultation</p><p class="font-weight-light">Probability 1%</p></div></a></div>';
 			$('.inbox_chat').html(cardsSecond).delay(1000);
 			agentMsg = '<div class="outgoing_msg"><div class="sent_msg"><p>We will hold it for free for a week and then it costs $100 per day.</p><span class="time_date"> 11:02 AM</span></div></div>';
@@ -278,6 +335,8 @@
 		}
 
 		function changeforthfckinglasttime() {
+
+			$('#secondTask').modal('show').delay(3000);
 			cardsThird = '<div class="chat_list active_chat"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill"><div class="color" ></div><div class="text"><p>View repair case</p><p class="font-weight-light">Best hint to follow</p></div></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green""><p>S600 W222 repair manual</p><p class="font-weight-light">Probability 47%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill"><p>International Warranty</p><p class="font-weight-light">Probability 34%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green"><p>Local Warranty</p><p class="font-weight-light">Probability 11%</p></div></a></div><div class="chat_list slideUp" id="an"><a data-toggle="modal" data-target="#task"><div class="badge badge-pill green"><p>Consultation</p><p class="font-weight-light">Probability 1%</p></div></a></div>';
 			$('.inbox_chat').html(cardsThird).delay(1000);
 		}

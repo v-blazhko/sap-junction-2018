@@ -249,7 +249,7 @@
 					</ol>					
 				</div>
 				<div class="modal-footer">
-					<button type="button" onclick="setTimeout(function() {doType();}, 6000);" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-phone" aria-hidden="true"></i> Call this customer</button>
+					<button type="button" onclick="doType();" class="btn btn-success mx-auto" data-dismiss="modal"><i class="fa fa-phone" aria-hidden="true"></i> Call this customer</button>
 				</div>
 			</div>
 		</div>
@@ -308,17 +308,15 @@
 
 		function doType() {
 			$('.wavy').show();
-
-			setTimeout(function() {
-				$('.chat_list').each(function(){
-					$(this).show();
-				});
-			}, 4000);
+			$('.chat_list').each(function(){
+				$(this).show();
+			});
 			
 			$("div.sent_msg > p").show().delay(4000);
 
 			var typing=Typing("Hi, ~2000~ I can’t pick it up today, I’m on vacation. ~2000~ Could you hold it for some time?");
 			typing();
+			$("#text").attr("id", " ");
 		}
 
 		function changeCards() {
